@@ -1,0 +1,281 @@
+html {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+body {
+    position: relative;
+    display: grid;
+    grid-template-areas: 
+        "art-header art-header"
+        "art-nav art-related"
+        "art-content art-related" 
+        "footer footer";
+    grid-template-columns: 3.2fr 0.8fr; 
+    grid-gap: 0px;
+    padding: 0 0 0 5%;
+    margin: 0 0;
+    background-image: url(../images/BodyImg.jpg);
+    background-position: center;
+    z-index: -1;
+}
+
+.back-to-top {
+    position: fixed;
+    right: 5%;
+    bottom: 5%;
+    background-color: aquamarine;
+    padding: 0.5rem;
+}
+
+.art-header {
+    grid-area: art-header;
+    display: grid;
+    grid-template-columns: 1fr 18fr 2fr;
+    grid-gap: 0px; 
+    position: relative;
+}
+
+.art-header::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -5.3%;
+    background-image: url(../images/Header.png);
+    width: 105.3%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.art-header img {
+    grid-column: 1 / 1;
+    height: 80%;
+}
+
+.art-header h1 {
+    grid-column: 2 / 2;
+    color: crimson;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    text-shadow: 0.1rem 0.1rem 0.3rem black;
+    padding: 1rem 0;
+    margin: 0 0;
+}
+
+.art-header div {
+    display: inline-block;
+    grid-column: 3 / 3;
+    position: relative;
+    top: calc(calc(100% - 4rem) / 2);
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    line-height: 4rem;
+    border: 3px blue solid;
+    background-color: azure;
+}
+
+nav ul {
+    grid-area: art-nav;
+    display: flex;
+    align-items: center;
+    justify-content: space-around   ;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+}
+
+nav ul::after {
+    content: "";
+    background-color: yellow;
+    position: absolute;
+    top: 0;
+    left: -6.7%;
+    width: 106.7%;
+    height: 100%;
+    z-index: -1;
+}
+
+nav ul li {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5rem;
+    height: 3rem;
+    line-height: 3rem;
+}
+
+nav ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    
+    background-color: red;
+}
+
+nav ul li a:active {
+    color: rgb(85, 26, 139);
+}
+
+article {
+    position: relative;
+    grid-area: art-content;
+    background-color: white;
+    color: black;
+}
+
+.art-content h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+article p {
+    font-size: 1.3rem;
+    padding: 0 2rem;
+}
+
+aside {
+    grid-area: art-related;
+}
+
+aside h2 {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+aside {
+    margin: 1rem;
+    border: 0.1rem orange solid;
+    background-color: rgb(255, 165, 0, 0.9);
+}
+
+aside ul li {
+    padding: 0.5rem 0;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+    background-color: aqua;
+    width: 10rem;
+}
+
+aside ul li a {
+    color: black;
+}
+
+footer {
+    grid-area: footer;
+    padding: 0 1rem;
+    line-height: 0;
+    background: white;
+    color: navy;
+}
+
+.art-content dl {
+    padding: 0 1rem;
+}
+
+
+.art-content dl dt {
+    font-size: 2rem;
+    font-style: italic;
+    color: chartreuse;
+}
+
+.art-content dl dd {
+    font-size: 1.3rem;
+    border: 0.2rem black solid;
+    margin-bottom: 3rem;
+}
+
+.art-content dl dd img {
+    padding: 0 0 1rem 2rem;
+}
+
+.tmr-yt-link {
+    font-size: 2rem;
+    color: aliceblue;
+    text-align: center;
+}
+
+.tmr-yt-link a:visited {
+    color: blueviolet;
+}
+
+.art-content figcaption video {
+    width:60%;
+    padding: 0% 5% 0 20%;
+    margin: 0 auto;
+}
+
+.art-content figcaption figure {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.gmail-link {
+    color: blueviolet;
+}
+
+.tmr-gmail {
+    display: inline-block;
+    border: 0.1rem black solid;
+    padding: 0 2rem;
+}
+
+.members-bar {
+    position: absolute;
+    right: 1rem;
+    top: 9rem;
+}
+
+.nav-bar {
+    display: none;
+}
+
+.related-bar {
+    display: none;
+}
+
+@media screen and (max-width:960px) {
+    nav {
+        display: none;
+    }
+    aside {
+        display: none;
+    }
+    body {
+        grid-template-areas: 
+        "art-header"
+        "art-nav"
+        "art-content" 
+        "footer footer"; 
+        grid-template-columns: 1fr 0fr;
+    }
+    article {
+        margin-right: 5%;
+    }
+    .back-to-top {
+        display: none;
+    }
+    .nav-bar {
+        display: block;
+        position: absolute;
+        left: 3%;
+        top: 1rem;
+    }
+    .related-bar {
+        display: block;
+        position: absolute;
+        left: 3%;
+        top: 2.4rem;
+    }
+}
